@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="688.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.financemanager.PaymentsController">
+   <children>
+      <AnchorPane prefHeight="689.0" prefWidth="220.0" style="-fx-background-color: #171717;">
+         <children>
+            <Button fx:id="button_dashboard" alignment="CENTER_RIGHT" layoutY="208.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="241.0" style=": ;" stylesheets="@button_payments_dOFF.css" text="DASHBOARD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_payments" alignment="CENTER_RIGHT" layoutY="271.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="241.0" stylesheets="@button_dashboard_dON.css" text="PAYMENTS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_account" alignment="CENTER_RIGHT" layoutY="334.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="241.0" stylesheets="@button_payments_dOFF.css" text="ACCOUNT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_logout" alignment="CENTER_RIGHT" layoutY="625.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="241.0" stylesheets="@button_payments_dOFF.css" text="LOGOUT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Label fx:id="label_user" alignment="CENTER" layoutY="63.0" prefHeight="58.0" prefWidth="242.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_user1" alignment="CENTER" layoutX="5.0" layoutY="14.0" prefHeight="58.0" prefWidth="232.0" text="WELCOME" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="14.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@dash.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="14.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@payments.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="14.0" layoutY="636.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="16.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@account.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="16.0" layoutY="636.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@quit.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="688.0" prefWidth="780.0" stylesheets="@button_dashboard_dON.css">
+         <children>
+            <VBox prefHeight="688.0" prefWidth="780.0">
+               <children>
+                  <AnchorPane prefHeight="76.0" prefWidth="780.0" style="-fx-background-color: #171717;">
+                     <children>
+                        <Label fx:id="label_date_time" alignment="CENTER" layoutX="27.0" layoutY="13.0" prefHeight="46.0" prefWidth="362.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="34.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_finance_manager" alignment="CENTER" layoutX="403.0" layoutY="13.0" prefHeight="46.0" prefWidth="362.0" text="FINANCE MANAGER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="34.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="612.0" prefWidth="780.0">
+                     <children>
+                        <TableView fx:id="table_payments" layoutX="14.0" layoutY="14.0" prefHeight="525.0" prefWidth="746.0">
+                          <columns>
+                             <TableColumn fx:id="typeColumn" prefWidth="89.60000419616699" text="TYPE" />
+                             <TableColumn fx:id="amountColumn" prefWidth="108.00000762939453" text="AMOUNT" />
+                             <TableColumn fx:id="titleColumn" prefWidth="284.7999572753906" text="TITLE" />
+                             <TableColumn fx:id="categoryColumn" prefWidth="131.99990844726562" text="CATEGORY" />
+                             <TableColumn fx:id="dateColumn" prefWidth="132.800048828125" sortType="DESCENDING" text="DATE" />
+
+                          </columns>
+                        </TableView>
+                        <Button fx:id="button_add_transaction" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="169.0" text="ADD TRANSACTION" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="button_edit_transaction" layoutX="203.0" layoutY="563.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="169.0" text="EDIT TRANSACTION" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="button_remove_transaction" layoutX="400.0" layoutY="563.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="169.0" text="REMOVE TRANSACTION" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="button_month_filter" layoutX="590.0" layoutY="563.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="169.0" text="FILTER TABLE BY MONTH" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+   </children>
+</HBox>

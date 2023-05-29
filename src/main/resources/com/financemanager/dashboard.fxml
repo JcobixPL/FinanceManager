@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="688.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.financemanager.DashboardController">
+   <children>
+      <AnchorPane prefHeight="689.0" prefWidth="220.0" style="-fx-background-color: #171717;">
+         <children>
+            <Button fx:id="button_dashboard" alignment="CENTER_RIGHT" layoutY="208.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="241.0" style=": ;" stylesheets="@button_dashboard_dON.css" text="DASHBOARD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_payments" alignment="CENTER_RIGHT" layoutY="271.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="241.0" stylesheets="@button_payments_dOFF.css" text="PAYMENTS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_account" alignment="CENTER_RIGHT" layoutY="334.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="241.0" stylesheets="@button_payments_dOFF.css" text="ACCOUNT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_logout" alignment="CENTER_RIGHT" layoutY="625.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="241.0" stylesheets="@button_payments_dOFF.css" text="LOGOUT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Label fx:id="label_user" alignment="CENTER" layoutY="63.0" prefHeight="58.0" prefWidth="242.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_user1" alignment="CENTER" layoutX="5.0" layoutY="14.0" prefHeight="58.0" prefWidth="232.0" text="WELCOME" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="19.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@account.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="17.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@dash.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="16.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@payments.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="19.0" layoutY="637.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@quit.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="688.0" prefWidth="780.0" stylesheets="@button_dashboard_dON.css">
+         <children>
+            <VBox prefHeight="688.0" prefWidth="780.0">
+               <children>
+                  <AnchorPane prefHeight="76.0" prefWidth="780.0" style="-fx-background-color: #171717;">
+                     <children>
+                        <Label fx:id="label_date_time" alignment="CENTER" layoutX="27.0" layoutY="13.0" prefHeight="46.0" prefWidth="362.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="34.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_finance_manager" alignment="CENTER" layoutX="403.0" layoutY="13.0" prefHeight="46.0" prefWidth="362.0" text="FINANCE MANAGER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="34.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="612.0" prefWidth="780.0">
+                     <children>
+                        <LineChart fx:id="linechart_balance" layoutX="16.0" layoutY="222.0" prefHeight="368.0" prefWidth="504.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="TOP" />
+                          </yAxis>
+                        </LineChart>
+                        <Label fx:id="label_incomes_budget" alignment="CENTER" layoutX="184.0" layoutY="64.0" prefHeight="84.0" prefWidth="173.0" text="MONTHLY INCOMES BALANCE:" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_expenses_balance" alignment="CENTER" layoutX="362.0" layoutY="70.0" prefHeight="70.0" prefWidth="173.0" text="MONTHLY EXPENSES BALANCE:" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <PieChart fx:id="piechart_balance" layoutX="533.0" layoutY="239.0" prefHeight="328.0" prefWidth="232.0" />
+                        <Label fx:id="label_transactions_balance" alignment="CENTER" layoutX="542.0" layoutY="76.0" prefHeight="58.0" prefWidth="220.0" text="MONTHLY TRANSACTIONS BALANCE:" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_current_budget_sum" layoutX="29.0" layoutY="140.0" prefHeight="18.0" prefWidth="141.0" />
+                        <Label fx:id="label_incomes_balance_sum" layoutX="185.0" layoutY="140.0" prefHeight="18.0" prefWidth="141.0" />
+                        <Label fx:id="label_expenses_balance_sum" layoutX="368.0" layoutY="140.0" prefHeight="18.0" prefWidth="141.0" />
+                        <Label fx:id="label_transaction_balance_sum" layoutX="541.0" layoutY="140.0" prefHeight="18.0" prefWidth="141.0" />
+                        <Label fx:id="label_current_budget" alignment="CENTER" layoutX="29.0" layoutY="77.0" prefHeight="58.0" prefWidth="149.0" text="CURRENT BUDGET:" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_current_budget1" alignment="CENTER" layoutX="23.0" layoutY="164.0" prefHeight="58.0" prefWidth="490.0" text="INCOMES AND EXPENSES BALANCE IN LAST 6 MONTHS">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_transactions_balance1" alignment="CENTER" layoutX="539.0" layoutY="175.0" prefHeight="58.0" prefWidth="220.0" text="TRANSACTIONS BALANCE ON CHART" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_current_budget2" layoutX="23.0" layoutY="14.0" prefHeight="58.0" prefWidth="288.0" text="FINANCES ON THE MONTH: ">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_date" layoutX="311.0" layoutY="14.0" prefHeight="58.0" prefWidth="274.0">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+   </children>
+</HBox>
